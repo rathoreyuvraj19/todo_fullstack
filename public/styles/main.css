@@ -110,6 +110,21 @@ p {
   width: 22px;
 }
 
+.delete {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  transition: all linear 0.1s;
+}
+
+.delete:hover {
+  transform: scale(1.5);
+  color: red;
+}
+
 .edit:hover {
   border-bottom: solid 1px #a683e3;
 }

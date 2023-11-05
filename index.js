@@ -42,6 +42,12 @@ app.post("/edit", async (req, res) => {
   res.redirect("/");
 });
 
+app.post("/delete", async (req, res) => {
+  console.log(req.body);
+  await db.query("DELETE FROM tasks WHERE id=$1", [req.body.taskIdreal]);
+  res.redirect("/");
+});
+
 app.post("/done", async (req, res) => {
   const result = items.find((item) => item.id == req.body.taskIdreal);
   // console.log(req.body);
