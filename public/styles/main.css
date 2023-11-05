@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  position: relative;
+}
+
+#main {
+  background-color: white;
+  width: 450px;
+  height: auto;
+  position: relative;
+  margin: 50px 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+  padding: 10px 5px;
+}
+
+.card {
+  width: 95%;
+  margin: auto;
+  font-size: 1.7rem;
+  padding: 5px;
+  border-bottom: solid 1px rgb(225, 151, 164);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+#new_card {
+  width: 98%;
+  margin: auto;
+  font-size: 1.7rem;
+}
+
+.add {
+  padding: 5px;
+  margin-right: 5px;
+  margin-left: 10px;
+  font-size: 1.7rem;
+  border: none;
+  border-bottom: solid 2px pink;
+  outline: none;
+  width: 85%;
+}
+
+.add2 {
+  padding: 5px;
+  margin-right: 5px;
+  font-size: 1.7rem;
+  border: none;
+  border-bottom: solid 2px pink;
+  outline: none;
+  width: 220px;
+  text-wrap: wrap;
+}
+
+.checkbox {
+  transform: scale(1.5);
+  margin-right: 10px;
+}
+
+#submit {
+  border-radius: 50%;
+  background-color: pink;
+  height: 30px;
+  width: 30px;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 600;
+  transition: all linear 0.1s;
+}
+
+#submit:hover {
+  transform: scale(1.2);
+  border: rgba(128, 0, 128, 0.5) 2px solid;
+}
+
+p {
+  margin-left: 5px;
+  width: 80%;
+}
+
+.edit {
+  background-color: transparent;
+  border: none;
+  /* border-radius: 50%; */
+  height: fit-content;
+  width: fit-content;
+  padding: 5px;
+}
+.icon {
+  height: 22px;
+  width: 22px;
+}
+
+.edit:hover {
+  border-bottom: solid 1px #a683e3;
+}

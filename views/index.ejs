@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permalist List</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <div id="main">
+        <% items.forEach((item)=>{%>
+            <div class="card">
+                <form action="/done" method="post">
+                    <input class="checkbox" type="checkbox" onchange="this.form.submit()" <%
+                        if(item.condition){%>checked <%}%>>
+                        <input type="hidden" value="<%= item.id %>" name="taskIdreal" id="<%= item.id %>">
+                </form>
+                <p id="task<%= item.id %>">
+                    <%=item.task %>
+                </p>
+                <form action="/edit" method="post">
+                    <input type="hidden" name="id" value="<%= item.id %>">
+                    <input class="add2" name="edit" id="input<%= item.id%>" type="text" hidden="true" autofocus="true"
+                        value="<%= item.task %>" autocomplete="off"
+                        onfocus="this.setSelectionRange(this.value.length,this.value.length);">
+                    <button id="done<%=item.id%>" class="edit" type="submit" hidden><img class="icon"
+                            src="/assets/icons/check-solid.svg" alt="tick image"></button>
+                </form>
+
+
+                <button id="edit<%=item.id %>" class="edit" onclick="handler('<%=item.id %>')"><img class="icon"
+                        src="/assets/icons/pencil-solid.svg" alt="pencil image"></button>
+
+            </div>
+            <% })%>
+
+
+
+
+                <div id="new_card">
+                    <form action="/add" method="post">
+                        <input name="newTask" class="add" type="text" autofocus placeholder="Add Task" required>
+                        <button id="submit" type="submit">+</button>
+                    </form>
+                </div>
+    </div>
+
+    <script>
+        function handler(id) {
+            document.getElementById("task" + id).setAttribute("hidden", true);
+            document.getElementById("edit" + id).setAttribute("hidden", true);
+            document.getElementById("done" + id).removeAttribute("hidden");
+            document.getElementById("input" + id).removeAttribute("hidden");
+            setTimeout(() => (
+                document.getElementById("input" + id).focus()),
+                200,
+            )
+        }
+    </script>
+</body>
+
+</html>
